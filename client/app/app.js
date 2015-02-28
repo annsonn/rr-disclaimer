@@ -5,7 +5,8 @@ angular.module('rrDisclaimerApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ngMaterial'
+  'ngMaterial',
+  'ngSignaturePad'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider

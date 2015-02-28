@@ -26,21 +26,21 @@
     </div>
     <div layout="row">
       <span>Signed on</span>
-      <md-select ng-model="user.signDay" placeholder="day">
+      <md-select class="inline" ng-model="user.signDay" placeholder="day">
         <md-option ng-value="day" ng-repeat="day in days">{{ day }}</md-option>
       </md-select>
       <span> day of </span>
-      <md-select ng-model="user.signMonth" placeholder="month">
+      <md-select class="inline" ng-model="user.signMonth" placeholder="month">
         <md-option ng-value="month" ng-repeat="month in months">{{ month }}</md-option>
       </md-select>
-      ,
-      <md-select ng-model="user.signYear" placeholder="year">
+      <span>, </span>
+      <md-select class="inline" ng-model="user.signYear" placeholder="year">
         <md-option ng-value="year" ng-repeat="year in years">{{ year }}</md-option>
       </md-select>
     </div>
     <div layout="row">
       <div flex>
-         Signature
+         <div signature-pad signature="user.signature"></div>
       </div>
     </div>
   </form>
