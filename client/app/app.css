@@ -32,3 +32,19 @@
         max-width: 730px;
     }
 }
+
+/* Content Section */
+#content {
+  background: white;
+  width: 95%;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+  #content {
+    width: 80%;
+  }
+}
