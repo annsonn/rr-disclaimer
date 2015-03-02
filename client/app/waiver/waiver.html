@@ -14,34 +14,50 @@
   <p>Sed scelerisque efficitur dictum. Maecenas finibus ultricies lacus, sit amet pellentesque enim mollis sit amet. Vestibulum tempus erat at imperdiet pulvinar. Aliquam in mauris eu sem volutpat iaculis. Ut finibus luctus vulputate. Proin eget nisi sit amet arcu ultricies tristique. Quisque quis porttitor magna. Aenean non pulvinar velit, eu rutrum tortor.</p>
 
   <form name="waiverForm">
+    <div layout="row">
+      <md-checkbox ng-model="user.agreed">
+        I agree with the terms.
+      </md-checkbox>      
+    </div>
+      
     <div layout="row">      
       <md-input-container flex>
         <label for="firstName">First Name</label>
         <input ng-model="user.firstName" name="firstName" required>
+        <div ng-messages="waiverForm.firstName.$error" ng-show="submitAttempted && waiverForm.firstName.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
       </md-input-container>
       <md-input-container flex>
         <label for="lastName">Last Name</label>
         <input ng-model="user.lastName" name="lastName" required>
+        <div ng-messages="waiverForm.lastName.$error" ng-show="submitAttempted && waiverForm.lastName.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
       </md-input-container>
     </div>
-    <div layout="row">
-      <span>Signed on</span>
-      <md-select class="inline" ng-model="user.signDay" placeholder="day">
-        <md-option ng-value="day" ng-repeat="day in days">{{ day }}</md-option>
-      </md-select>
-      <span> day of </span>
-      <md-select class="inline" ng-model="user.signMonth" placeholder="month">
-        <md-option ng-value="month" ng-repeat="month in months">{{ month }}</md-option>
-      </md-select>
-      <span>, </span>
-      <md-select class="inline" ng-model="user.signYear" placeholder="year">
-        <md-option ng-value="year" ng-repeat="year in years">{{ year }}</md-option>
-      </md-select>
+    <div layout="row">      
+      <md-input-container flex>
+        <label for="date">Date</label>
+        <input ng-model="user.date" name="date" type="date" required>
+        <div ng-messages="waiverForm.date.$error" ng-show="submitAttempted && waiverForm.date.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>      
     </div>
+    <md-divider md-inset></md-divider>
     <div layout="row">
-      <div flex>
-         <div signature-pad signature="user.signature"></div>
-      </div>
+      <md-input-container>
+        <label>Signature</label>        
+      </md-input-container>
+      <div signature-pad signature="user.signature"></div>
+    </div>
+    
+    <md-divider md-inset></md-divider>
+    <div layout="row" layout-align="end end">
+      <md-button class="md-primary" ng-click="submit()">
+        Submit  
+      </md-button>
     </div>
   </form>
 </md-content>
