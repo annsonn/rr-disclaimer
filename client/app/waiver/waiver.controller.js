@@ -6,11 +6,14 @@ angular.module('rrDisclaimerApp')
     $scope.user = {      
       date: new Date()
     };
-        
+      
+    $scope.signature = {};
+    
+    
     $scope.submit = function() {
       $scope.submitAttempted = true;
-      console.log('waiverform', $scope.waiverForm);
       
+      console.log($scope.signature);
       console.log('submitting', $scope.user);
     };
   });
