@@ -10,7 +10,7 @@
         <md-checkbox ng-model="user.agreed" name="agreed" ng-required="true">
           I agree with the terms.
         </md-checkbox>
-        <div ng-messages="waiverForm.agreed.$error" ng-show="submitAttempted && waiverForm.agreed.$error">
+        <div ng-messages="waiverForm.agreed.$error" ng-show="submitAttempted && waiverForm.agreed.$error.required">
           <div ng-message="required">This is required.</div>
         </div>
       </md-input-container>
@@ -20,14 +20,14 @@
       <md-input-container flex>
         <label for="firstName">First Name</label>
         <input ng-model="user.firstName" name="firstName" required>
-        <div ng-messages="waiverForm.firstName.$error" ng-show="submitAttempted && waiverForm.firstName.$error">
+        <div ng-messages="waiverForm.firstName.$error" ng-show="submitAttempted && waiverForm.firstName.$error.required">
           <div ng-message="required">This is required.</div>
         </div>
       </md-input-container>
       <md-input-container flex>
         <label for="lastName">Last Name</label>
         <input ng-model="user.lastName" name="lastName" required>
-        <div ng-messages="waiverForm.lastName.$error" ng-show="submitAttempted && waiverForm.lastName.$error">
+        <div ng-messages="waiverForm.lastName.$error" ng-show="submitAttempted && waiverForm.lastName.$error.required">
           <div ng-message="required">This is required.</div>
         </div>
       </md-input-container>
@@ -36,7 +36,7 @@
       <md-input-container flex>
         <label for="date">Date</label>
         <input ng-model="user.date" name="date" type="date" required>
-        <div ng-messages="waiverForm.date.$error" ng-show="submitAttempted && waiverForm.date.$error">
+        <div ng-messages="waiverForm.date.$error" ng-show="submitAttempted && waiverForm.date.$error.required">
           <div ng-message="required">This is required.</div>
         </div>
       </md-input-container>      
