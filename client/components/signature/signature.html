@@ -1,0 +1,17 @@
+<div class="signature-background">  
+  <div class="signature" ng-style="{height: signatureHeight, width: signatureWidth}" >
+    <canvas></canvas>
+  </div>
+  <md-divider md-inset></md-divider>
+  <div layout="row" layout-align="end end">
+    <md-button ng-click="erase()">
+      Erase
+    </md-button>
+    <md-button ng-click="empty()">
+      Clear  
+    </md-button>
+    <md-button class="md-primary" ng-click="accept()">
+      Submit  
+    </md-button>  
+  </div>
+</div>

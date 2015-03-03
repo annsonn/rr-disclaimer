@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('rrDisclaimerApp')
-  .controller('WaiverCtrl', function ($scope) {
+  .controller('WaiverCtrl', function ($scope, $mdDialog, Forms) {
            
     $scope.user = {      
       date: new Date()
@@ -9,11 +9,15 @@ angular.module('rrDisclaimerApp')
       
     $scope.signature = {};
     
+    $scope.clear = function() {
+      $scope.user = {};
+    };
     
-    $scope.submit = function() {
+    $scope.submit = function() {           
       $scope.submitAttempted = true;
-      
-      console.log($scope.signature);
-      console.log('submitting', $scope.user);
+      if (!$scope.waiverForm.invalid && !$scope.signature.isEmpty && $scope.user.agreed) {        
+        $scope.user.signature = $scope.signature.dataUrl;
+        Forms.submitWaiver($scope.user);
+      }
     };
   });
