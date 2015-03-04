@@ -5,7 +5,6 @@ angular.module('rrDisclaimerApp')
     
     return {
       submitWaiver: function(waiver) {
-        console.log('submitting:', waiver);
         return $http.post('/api/waivers', waiver);
       },
       submitMediaConsent: function(form) {

@@ -56,6 +56,7 @@ angular.module('ngSignaturePad').directive('signaturePad', [
             $scope.disableSubmit = true;
             
             $scope.disableSubmit = $scope.close();
+            
           };
           $scope.erase = function() {
             signaturePad.clear();

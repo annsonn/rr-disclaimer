@@ -1,7 +1,9 @@
 <div class="signature-background">  
   <div class="signature" ng-style="{height: signatureHeight, width: signatureWidth}" >
-    <canvas></canvas>
+    <canvas class="md-whiteframe-z1" ng-hide="disableSubmit"></canvas>
+    <img ng-show="disableSubmit" ng-src="signature.dataUrl"/>
   </div>
+  <br>
   <md-divider md-inset></md-divider>
   <div layout="row" layout-align="end end">
     <md-button ng-click="erase()">
