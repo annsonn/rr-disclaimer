@@ -1,8 +1,4 @@
-/**
- * ngSignaturePad - v0.1.0 - 2013-12-02
- * https://github.com/marcorinck/ngSignaturePad
- * Copyright (c) 2013 ; Licensed MIT
- */
+
 angular.module('ngSignaturePad', []);
 angular.module('ngSignaturePad').directive('signaturePad', [
   '$window',
@@ -56,8 +52,10 @@ angular.module('ngSignaturePad').directive('signaturePad', [
             } else {
               $scope.signature.dataUrl = EMPTY_IMAGE;
               $scope.signature.$isEmpty = true;
-            }
-            $scope.close();
+            } 
+            $scope.disableSubmit = true;
+            
+            $scope.disableSubmit = $scope.close();
           };
           $scope.erase = function() {
             signaturePad.clear();

@@ -13,11 +13,23 @@ angular.module('rrDisclaimerApp')
       $scope.user = {};
     };
     
-    $scope.submit = function() {           
-      $scope.submitAttempted = true;
-      if (!$scope.waiverForm.invalid && !$scope.signature.isEmpty && $scope.user.agreed) {        
+    
+    // Submit function that is passed to directive and returns boolean for disabling submit button
+    $scope.submit = function() {
+      $scope.submitAttempted = true; 
+      if (!$scope.waiverForm.$invalid && !$scope.signature.$isEmpty) {
         $scope.user.signature = $scope.signature.dataUrl;
-        Forms.submitWaiver($scope.user);
+        Forms.submitWaiver($scope.user)
+          .success(function(result){
+            console.log(result);
+            return true;
+          })
+          .error(function(error){ 
+            console.log(error);
+            return false;
+          });
+      } else {
+        return false;
       }
     };
   });

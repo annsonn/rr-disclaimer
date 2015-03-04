@@ -4,18 +4,7 @@
   <p>In ac ultrices mauris. Nullam mollis ultrices molestie. Pellentesque egestas, nulla id convallis imperdiet, justo tortor eleifend velit, sed lacinia neque nibh eu felis. Quisque volutpat quam in risus semper, a luctus ante sagittis. Proin dui ante, sollicitudin a sodales consectetur, ullamcorper non turpis. Ut eget consequat nisl. Integer aliquam faucibus rhoncus. Sed sem ex, faucibus et ornare vitae, venenatis et enim.</p>
 
 
-  <form name="waiverForm">
-    <div layout="row">
-      <md-input-container flex>
-        <md-checkbox ng-model="user.agreed" name="agreed" ng-required="true">
-          I agree with the terms.
-        </md-checkbox>
-        <div ng-messages="waiverForm.agreed.$error" ng-show="submitAttempted && waiverForm.agreed.$error.required">
-          <div ng-message="required">This is required.</div>
-        </div>
-      </md-input-container>
-    </div>
-      
+  <form name="waiverForm">          
     <div layout="row">      
       <md-input-container flex>
         <label for="firstName">First Name</label>
@@ -46,8 +35,6 @@
         <label>Signature</label>        
       </md-input-container>      
       <div signature-pad signature="signature" clear="clear()" close="submit()"></div>
-    </div>
-    
-    
+    </div>        
   </form>
 </md-content>
