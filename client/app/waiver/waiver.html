@@ -33,7 +33,8 @@
       </md-input-container>      
       <div signature-pad signature="signature" clear="clear()" close="submit()" ng-hide="inputsDisabled"></div>
       <img ng-show="inputsDisabled" ng-src="{{user.signature}}" style="width: 100%;"/>
-      <md-button ng-show="inputsDisabled" ng-click="reload()" class="md-primary">Waiver is complete, restart?</md-button>
+      <br>
+      <md-button ng-show="inputsDisabled" ng-click="goToMediaConsent()" class="md-primary">Waiver is complete, fill in Media Consent form?</md-button>
     </div>        
   </form>
 </md-content>

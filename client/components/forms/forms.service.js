@@ -4,6 +4,7 @@ angular.module('rrDisclaimerApp')
   .service('Forms', function ($http) {
     
     return {
+      currentUser: {},
       submitWaiver: function(waiver) {
         return $http.post('/api/waivers', waiver);
       },

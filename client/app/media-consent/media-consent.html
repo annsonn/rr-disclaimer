@@ -1,3 +1,42 @@
-<div class="col-md-12">
-This is the media-consent view.
-</div>
+<md-content id="content" class="md-whiteframe-z3" style="padding: 2%;">
+  <h1>Photograph, Video and Voice Recording Consent, Waiver, Indemnity and Release Form</h1>
+  <div ng-include="'app/media-consent/media-consent.recording.text.html'"></div>
+  <div ng-include="'app/media-consent/media-consent.waiver.text.html'"></div>
+  <br>
+  <form name="waiverForm">          
+    <div layout="row">      
+      <md-input-container flex>
+        <label for="firstName">First Name</label>
+        <input ng-model="user.firstName" name="firstName" required ng-disabled="inputsDisabled">
+        <div ng-messages="waiverForm.firstName.$error" ng-show="submitAttempted && waiverForm.firstName.$error.required">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <md-input-container flex>
+        <label for="lastName">Last Name</label>
+        <input ng-model="user.lastName" name="lastName" required ng-disabled="inputsDisabled">
+        <div ng-messages="waiverForm.lastName.$error" ng-show="submitAttempted && waiverForm.lastName.$error.required">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+    </div>
+    <div layout="row">      
+      <md-input-container flex>
+        <label for="date">Date</label>
+        <input ng-model="user.date" name="date" type="date" required ng-disabled="inputsDisabled">
+        <div ng-messages="waiverForm.date.$error" ng-show="submitAttempted && waiverForm.date.$error.required">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>      
+    </div>
+    <div layout="column" class="noselect">
+      <md-input-container>
+        <label>Signature</label>        
+      </md-input-container>      
+      <div signature-pad signature="signature" clear="clear()" close="submit()" ng-hide="inputsDisabled"></div>
+      <img ng-show="inputsDisabled" ng-src="{{user.signature}}" style="width: 100%;"/>
+      <br>
+      <md-button ng-show="inputsDisabled" ng-click="goToMediaConsent()" class="md-primary">Waiver is complete, fill in Media Consent form?</md-button>
+    </div>        
+  </form>
+</md-content>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('rrDisclaimerApp')
-  .controller('WaiverCtrl', function ($scope, $mdDialog, $mdToast, $route, Forms) {
+  .controller('WaiverCtrl', function ($scope, $mdDialog, $location, Forms) {
            
     $scope.user = {      
       date: new Date()
@@ -13,8 +13,8 @@ angular.module('rrDisclaimerApp')
       $scope.user = {};
     };
     
-    $scope.reload = function(){
-      $route.reload();
+    $scope.goToMediaConsent = function(){
+      $location.path('/media-consent');
     };
         
     // Submit function that is passed to directive and returns boolean for disabling submit button
@@ -23,7 +23,11 @@ angular.module('rrDisclaimerApp')
       if (!$scope.waiverForm.$invalid && !$scope.signature.$isEmpty) {
         $scope.user.signature = $scope.signature.dataUrl;
         Forms.submitWaiver($scope.user)
-          .success(function(result){                      
+          .success(function(result){                  
+            Forms.currentUser = {
+              firstName: result.firstName,
+              lastName: result.lastName
+            }
             $scope.inputsDisabled = true;
             $scope.user.signature = result.signature;
             return true;
