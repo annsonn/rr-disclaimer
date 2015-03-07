@@ -5,12 +5,11 @@ angular.module('rrDisclaimerApp')
     
     return {
       currentUser: {},
-      submitWaiver: function(waiver) {
-        return $http.post('/api/waivers', waiver);
+      submitWaiver: function(form) {
+        return $http.post('/api/waivers', form);
       },
       submitMediaConsent: function(form) {
-        console.log('submitting:', form);
-        //return $http.post('/forms/media', form);
+        return $http.post('/api/mediaConsents', form);
       }
       
     };
