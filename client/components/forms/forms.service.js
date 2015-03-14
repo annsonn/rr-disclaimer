@@ -10,7 +10,9 @@ angular.module('rrDisclaimerApp')
       },
       submitMediaConsent: function(form) {
         return $http.post('/api/mediaConsents', form);
+      },
+      submitMediaRelease: function(form) {
+        return $http.post('/api/mediaConsents', form);      
       }
-      
     };
   });

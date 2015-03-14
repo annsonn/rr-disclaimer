@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('rrDisclaimerApp')
-  .controller('MediaConsentCtrl', function ($scope, Forms) {
+  .controller('MediaConsentCtrl', function ($scope, $location, Forms) {
     $scope.user = Forms.currentUser;
     $scope.user.date = new Date();
   
@@ -11,6 +11,10 @@ angular.module('rrDisclaimerApp')
       $scope.user = {};
     };
  
+    $scope.goToMediaRelease = function() {
+      $location.path('/media-release');
+    };  
+  
     // Submit function that is passed to directive and returns boolean for disabling submit button
     $scope.submit = function() {
       $scope.submitAttempted = true; 
