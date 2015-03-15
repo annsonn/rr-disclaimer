@@ -12,7 +12,7 @@ angular.module('rrDisclaimerApp')
         return $http.get('/api/mediaConsents');
       },
       getMediaReleases: function() {
-        return $http.get('/api/mediaConsents');
+        return $http.get('/api/mediaReleases');
       },               
       submitWaiver: function(form) {
         return $http.post('/api/waivers', form);

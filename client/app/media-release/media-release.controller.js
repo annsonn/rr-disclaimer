@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('rrDisclaimerApp')
-  .controller('MediaReleaseCtrl',function ($scope, Forms) {
+  .controller('MediaReleaseCtrl',function ($scope, $location, Forms) {
     $scope.user = Forms.currentUser;
     $scope.user.date = new Date();
   
