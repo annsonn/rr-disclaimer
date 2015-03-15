@@ -51,4 +51,10 @@
   #content {
     width: 80%;
   }
+  
+  #content.large {
+    width: 95%;
+  }
+  
+  
 }

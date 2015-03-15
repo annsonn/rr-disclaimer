@@ -1,0 +1,33 @@
+<md-content id="content" class="md-whiteframe-z3" style="padding: 2%;">
+  <div ng-if="form.type === 'waiver'" ng-include="'app/waiver/waiver.text.html'"></div> 
+
+  <div ng-if="form.type === 'mediaConsent'" ng-include="'app/media-consent/media-consent.text.html'"></div>  
+
+  <div ng-if="form.type === 'mediaRelease'" ng-include="'app/media-release/media-release.text.html'"></div>
+  
+  <br>
+  
+  <div layout="row">      
+    <div flex>
+      <h5>First Name:</h5> 
+      <span>{{form.waiver.firstName}}</span>
+    </div>
+    <div flex>
+      <h5>Last Name:</h5>
+      <span>{{form.waiver.lastName}}</span>
+    </div>
+  </div>
+      
+  <div layout="row"> 
+    <div flex>
+      <h5>Date</h5>
+      <span>{{form.waiver.date | date}}</span>
+    </div>
+  </div>
+  
+  <div layout="column">
+    <h5>Signature</h5>        
+    <img ng-src="{{form.waiver.signature}}" style="width: 100%;"/>
+    <br>
+  </div>
+</md-content>

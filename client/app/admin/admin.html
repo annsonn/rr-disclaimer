@@ -1,12 +1,68 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
-  <p>The delete user and user index api routes are restricted to users with the 'admin' role.</p>
-  <ul class="list-group">
-    <li class="list-group-item" ng-repeat="user in users">
-        <strong>{{user.name}}</strong><br>
-        <span class="text-muted">{{user.email}}</span>
-        <a ng-click="delete(user)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
-    </li>
-  </ul>
-</div>
+<md-content id="content" class="large md-whiteframe-z3" style="padding: 2%;">
+  <h1>Administration</h1>
+  
+  <div layout="row">
+    <div flex layout="column" layout-align="start center">
+      <h2>Waivers</h2>
+      <md-card ng-repeat="waiver in waivers.waivers" layout="row">
+        <md-card-content>
+          <h4>{{waiver.firstName}} {{waiver.lastName}}</h4>
+          <div>
+            <md-button ng-click="view(waiver, 'waiver')">
+              View
+            </md-button>
+            <md-button class="md-warning">
+              Delete
+            </md-button>
+            <md-button class="md-warning">
+              Mark As Viewed
+            </md-button>
+          </div>          
+        </md-card-content>
+      </md-card>      
+    </div>
+    
+    <div flex layout="column" layout-align="start center">
+      <h2>Media Consents</h2>
+      <md-card ng-repeat="waiver in waivers.mediaConsents" layout="row">
+        <md-card-content>
+          <h4>{{waiver.firstName}} {{waiver.lastName}}</h4>
+          <div>
+            <md-button ng-click="view(waiver, 'mediaConsent')">
+              View
+            </md-button>
+            <md-button class="md-warning">
+              Delete
+            </md-button>
+            <md-button class="md-warning">
+              Mark As Viewed
+            </md-button>
+          </div>          
+        </md-card-content>
+      </md-card>       
+    </div>
+    
+    <div flex layout="column" layout-align="start center">
+      <h2>Media Releases</h2>
+      <md-card ng-repeat="waiver in waivers.mediaReleases" layout="row">
+        <md-card-content>
+          <h4>{{waiver.firstName}} {{waiver.lastName}}</h4>
+          <div>
+            <md-button ng-click="view(waiver, 'mediaRelease')">
+              View
+            </md-button>
+            <md-button class="md-warning">
+              Delete
+            </md-button>
+            <md-button class="md-warning">
+              Mark As Viewed
+            </md-button>
+          </div>          
+        </md-card-content>
+      </md-card> 
+    </div>
+  </div>
+  
+</md-content>
