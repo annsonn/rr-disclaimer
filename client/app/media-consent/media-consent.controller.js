@@ -25,7 +25,7 @@ angular.module('rrDisclaimerApp')
             Forms.currentUser = {
               firstName: result.firstName,
               lastName: result.lastName
-            }
+            };
             $scope.inputsDisabled = true;
             $scope.user.signature = result.signature;
             return true;

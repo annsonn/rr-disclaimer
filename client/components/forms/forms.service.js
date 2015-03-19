@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('rrDisclaimerApp')
-  .service('Forms', function ($http, $q) {
+  .service('Forms', function ($http) {
     
     return {
       currentUser: {},
