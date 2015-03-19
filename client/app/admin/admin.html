@@ -6,7 +6,7 @@
   <div layout="row">
     <div flex layout="column" layout-align="start center">
       <h2>Waivers</h2>
-      <md-card ng-repeat="waiver in waivers.waivers" layout="row">
+      <md-card ng-repeat="waiver in waivers.waivers" layout="row" ng-class="{'md-warning': waiver.viewed}">
         <md-card-content>
           <h4>{{waiver.firstName}} {{waiver.lastName}}</h4>
           <div>
@@ -16,7 +16,7 @@
             <md-button class="md-warning" ng-click="delete(waiver, 'waiver')">
               Delete
             </md-button>
-            <md-button class="md-warning">
+            <md-button class="md-warning" ng-click="viewed(waiver, 'waiver')" ng-hide="waiver.viewed">
               Mark As Viewed
             </md-button>
           </div>          
@@ -26,7 +26,7 @@
     
     <div flex layout="column" layout-align="start center">
       <h2>Media Consents</h2>
-      <md-card ng-repeat="waiver in waivers.mediaConsents" layout="row">
+      <md-card ng-repeat="waiver in waivers.mediaConsents" layout="row" ng-class="{'md-warning': waiver.viewed}">
         <md-card-content>
           <h4>{{waiver.firstName}} {{waiver.lastName}}</h4>
           <div>
@@ -36,7 +36,7 @@
             <md-button class="md-warning" ng-click="delete(waiver, 'mediaConsent')">
               Delete
             </md-button>
-            <md-button class="md-warning">
+            <md-button class="md-warning" ng-click="viewed(waiver, 'mediaConsent')" ng-hide="waiver.viewed">
               Mark As Viewed
             </md-button>
           </div>          
@@ -46,7 +46,7 @@
     
     <div flex layout="column" layout-align="start center">
       <h2>Media Releases</h2>
-      <md-card ng-repeat="waiver in waivers.mediaReleases" layout="row">
+      <md-card ng-repeat="waiver in waivers.mediaReleases" layout="row" ng-class="{'md-warning': waiver.viewed}">
         <md-card-content>
           <h4>{{waiver.firstName}} {{waiver.lastName}}</h4>
           <div>
@@ -56,7 +56,7 @@
             <md-button class="md-warning" ng-click="delete(waiver, 'mediaRelease')">
               Delete
             </md-button>
-            <md-button class="md-warning">
+            <md-button class="md-warning" ng-click="viewed(waiver, 'mediaRelease')" ng-hide="waiver.viewed">
               Mark As Viewed
             </md-button>
           </div>          

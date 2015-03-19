@@ -23,7 +23,10 @@ angular.module('rrDisclaimerApp')
       submitMediaRelease: function(form) {
         return $http.post('/api/mediaReleases', form);      
       },
-      
+      markWaiverViewed: function(waiver, type) {        
+        waiver.viewed = true;
+        return $http.put('/api/' + type + 's/' + waiver._id, waiver);
+      },
       deleteWaiver: function(waiver, type) {
         return $http.delete('/api/' + type + 's/' + waiver._id);
       },

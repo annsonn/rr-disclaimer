@@ -50,6 +50,11 @@ angular.module('rrDisclaimerApp')
       ViewFormService.type = type;
       $location.path('/view-form');
     };
+  
+    $scope.viewed = function(waiver, type) {
+      Forms.markWaiverViewed(waiver, type);
+      $scope.refresh(type);
+    };
 
     $scope.delete = function(waiver, type) {
       Forms.deleteWaiver(waiver, type);

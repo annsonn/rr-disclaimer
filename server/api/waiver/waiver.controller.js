@@ -42,7 +42,7 @@ exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }
   Waiver.findById(req.params.id, function (err, waiver) {
     if (err) { return handleError(res, err); }
-    if(!waiver) { return res.send(404); }
+    if(!waiver) { return res.send(404); }   
     var updated = _.merge(waiver, req.body);
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
