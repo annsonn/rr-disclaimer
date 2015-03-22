@@ -6,10 +6,10 @@ angular.module('ngSignaturePad').directive('signaturePad', [
     'use strict';
     var signaturePad, canvas, scope, element, EMPTY_IMAGE = 'data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=';
     function calculateHeight($element) {
-      return parseInt($element.css('height'), 10) - 70;
+      return parseInt($element.css('height'), 10);
     }
     function calculateWidth($element) {
-      return parseInt($element.css('width'), 10) - 25;
+      return parseInt($element.css('width'), 10);
     }
     function setCanvasHeightAndWidth() {
       var height = calculateHeight(element), width = calculateWidth(element);
