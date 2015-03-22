@@ -8,7 +8,7 @@ angular.module('rrDisclaimerApp', [
   'ngMaterial',
   'ngSignaturePad'
 ])
-  .config(function ($routeProvider, $locationProvider, $httpProvider) {
+  .config(function ($routeProvider, $locationProvider, $httpProvider, $mdThemingProvider) {
     $routeProvider
       .otherwise({
         redirectTo: '/'
@@ -16,8 +16,10 @@ angular.module('rrDisclaimerApp', [
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
+    $mdThemingProvider.theme('default')
+      .primaryPalette('pink')
+      .accentPalette('orange');
   })
-
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
     return {
       // Add authorization token to headers
