@@ -17,8 +17,9 @@ angular.module('rrDisclaimerApp', [
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
     $mdThemingProvider.theme('default')
-      .primaryPalette('pink')
-      .accentPalette('orange');
+      .primaryPalette('blue')
+      .accentPalette('orange')
+      .warnPalette('pink');
   })
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
     return {

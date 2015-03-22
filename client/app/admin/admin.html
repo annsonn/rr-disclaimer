@@ -11,16 +11,20 @@
   </div>
   
   <div layout="row">
-    <div flex layout="column" layout-align="start center">
-      <h2>Waivers</h2>
-      <md-card ng-repeat="waiver in waivers.waivers | orderBy:'-date' | filter:search" layout="row" ng-class="{'md-warning': waiver.viewed}">
+    <md-content flex layout="column" class="md-whiteframe-z2">
+       <md-toolbar>
+         <h2 class="md-toolbar-tools">
+           <span>Waivers</span>
+         </h2>
+      </md-toolbar>
+      <md-card ng-repeat="waiver in waivers.waivers | orderBy:'-date' | filter:search" ng-class="{'md-warning': waiver.viewed}">
         <md-card-content>
           <h4>{{waiver.firstName}} {{waiver.lastName}}</h4>
           <div>
-            <md-button ng-click="view(waiver, 'waiver')">
+            <md-button class="md-primary" ng-click="view(waiver, 'waiver')">
               View
             </md-button>
-            <md-button class="md-warning" ng-click="delete(waiver, 'waiver')">
+            <md-button class="md-accent" ng-click="delete(waiver, 'waiver')">
               Delete
             </md-button>
             <md-button class="md-warning" ng-click="viewed(waiver, 'waiver')" ng-hide="waiver.viewed">
@@ -29,18 +33,22 @@
           </div>          
         </md-card-content>
       </md-card>      
-    </div>
+    </md-content>
     
-    <div flex layout="column" layout-align="start center">
-      <h2>Media Consents</h2>
-      <md-card ng-repeat="waiver in waivers.mediaConsents | orderBy:'-date' | filter:search" layout="row" ng-class="{'md-warning': waiver.viewed}">
+    <md-content flex layout="column" class="md-whiteframe-z2">
+      <md-toolbar>
+         <h2 class="md-toolbar-tools">
+           <span>Media Consents</span>
+         </h2>
+      </md-toolbar>
+      <md-card ng-repeat="waiver in waivers.mediaConsents | orderBy:'-date' | filter:search"  ng-class="{'md-warning': waiver.viewed}">
         <md-card-content>
           <h4>{{waiver.firstName}} {{waiver.lastName}}</h4>
           <div>
-            <md-button ng-click="view(waiver, 'mediaConsent')">
+            <md-button class="md-primary" ng-click="view(waiver, 'mediaConsent')">
               View
             </md-button>
-            <md-button class="md-warning" ng-click="delete(waiver, 'mediaConsent')">
+            <md-button class="md-accent" ng-click="delete(waiver, 'mediaConsent')">
               Delete
             </md-button>
             <md-button class="md-warning" ng-click="viewed(waiver, 'mediaConsent')" ng-hide="waiver.viewed">
@@ -49,18 +57,22 @@
           </div>          
         </md-card-content>
       </md-card>       
-    </div>
+    </md-content>
     
-    <div flex layout="column" layout-align="start center">
-      <h2>Media Releases</h2>
-      <md-card ng-repeat="waiver in waivers.mediaReleases | orderBy:'-date' | filter:search" layout="row" ng-class="{'md-warning': waiver.viewed}">
+    <md-content layout="column" class="md-whiteframe-z2">
+      <md-toolbar>
+         <h2 class="md-toolbar-tools">
+           <span>Media Releases</span>
+         </h2>
+      </md-toolbar>
+      <md-card ng-repeat="waiver in waivers.mediaReleases | orderBy:'-date' | filter:search" ng-class="{'md-warning': waiver.viewed}">
         <md-card-content>
           <h4>{{waiver.firstName}} {{waiver.lastName}}</h4>
           <div>
-            <md-button ng-click="view(waiver, 'mediaRelease')">
+            <md-button class="md-primary" ng-click="view(waiver, 'mediaRelease')">
               View
             </md-button>
-            <md-button class="md-warning" ng-click="delete(waiver, 'mediaRelease')">
+            <md-button class="md-accent" ng-click="delete(waiver, 'mediaRelease')">
               Delete
             </md-button>
             <md-button class="md-warning" ng-click="viewed(waiver, 'mediaRelease')" ng-hide="waiver.viewed">
@@ -69,7 +81,7 @@
           </div>          
         </md-card-content>
       </md-card> 
-    </div>
+    </md-content>
   </div>
   
 </md-content>
