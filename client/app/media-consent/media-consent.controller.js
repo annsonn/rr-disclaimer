@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('rrDisclaimerApp')
-  .controller('MediaConsentCtrl', function ($scope, $location, Forms) {
+  .controller('MediaConsentCtrl', function ($anchorScroll, $scope, $location, Forms) {
     $scope.user = Forms.currentUser;
     $scope.user.date = new Date();
   
@@ -12,6 +12,8 @@ angular.module('rrDisclaimerApp')
     };
  
     $scope.goToMediaRelease = function() {
+      $location.hash('title');
+      $anchorScroll();
       $location.path('/media-release');
     };  
   

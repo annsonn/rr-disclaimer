@@ -1,5 +1,5 @@
 <md-content id="content" class="md-whiteframe-z3" style="padding: 2%;">
-  <h1>Photograph, Video and Voice Recording Consent, Waiver, Indemnity and Release Form</h1>
+  <h1 id="title">Photograph, Video and Voice Recording Consent, Waiver, Indemnity and Release Form</h1>
   <div ng-include="'app/media-consent/media-consent.text.html'"></div>
   <br>
   <form name="waiverForm">          
@@ -35,7 +35,7 @@
       <div signature-pad signature="signature" clear="clear()" close="submit()" ng-hide="inputsDisabled"></div>
       <img ng-show="inputsDisabled" ng-src="{{user.signature}}" style="width: 100%;"/>
       <br>
-      <md-button ng-show="inputsDisabled" ng-click="goToMediaRelease()" class="md-primary">Media Consent is complete, fill in Media Release form?</md-button>
+      <md-button ng-show="inputsDisabled" ng-click="goToMediaRelease()" class="md-primary md-raised">Media Consent is complete, fill in Media Release form?</md-button>
     </div>        
   </form>
 </md-content>
