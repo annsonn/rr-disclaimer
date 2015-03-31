@@ -15,7 +15,7 @@
        <md-toolbar>
          <h2 class="md-toolbar-tools" layout="row" layout-align="space-between center">
            <span>Waivers</span>
-           <md-button ng-click="refresh('waiver')"><img src="/assets/material-icons/core/refresh.svg"/></md-button>
+           <md-button ng-click="refresh('waiver')"><img src="assets/material-icons/core/refresh.svg"/></md-button>
          </h2>
       </md-toolbar>
       <md-card ng-repeat="waiver in waivers.waivers | orderBy:'-date' | filter:search" ng-class="{'md-warning': waiver.viewed}">
@@ -40,7 +40,7 @@
       <md-toolbar>
          <h2 class="md-toolbar-tools" layout="row" layout-align="space-between center">
            <span>Media Consents</span>
-           <md-button ng-click="refresh('mediaConsent')"><img src="/assets/material-icons/core/refresh.svg"/></md-button>
+           <md-button ng-click="refresh('mediaConsent')"><img src="assets/material-icons/core/refresh.svg"/></md-button>
          </h2>
       </md-toolbar>
       <md-card ng-repeat="waiver in waivers.mediaConsents | orderBy:'-date' | filter:search"  ng-class="{'md-warning': waiver.viewed}">
@@ -65,7 +65,7 @@
       <md-toolbar>
          <h2 class="md-toolbar-tools" layout="row" layout-align="space-between center">
            <span>Media Releases</span>
-           <md-button ng-click="refresh('mediaRelease')"><img src="/assets/material-icons/core/refresh.svg"/></md-button>
+           <md-button ng-click="refresh('mediaRelease')"><img src="assets/material-icons/core/refresh.svg"/></md-button>
          </h2>
       </md-toolbar>
       <md-card ng-repeat="waiver in waivers.mediaReleases | orderBy:'-date' | filter:search" ng-class="{'md-warning': waiver.viewed}">
