@@ -10,18 +10,20 @@
     </md-input-container>
   </div>
   
-  <div layout="row">
-    <md-content flex layout="column" class="md-whiteframe-z2" style="margin: 0 2px;">
+  <div layout="row" layout-margin layout-fill layout-padding>
+    <md-content flex layout="column" class="md-whiteframe-z1">
        <md-toolbar>
          <h2 class="md-toolbar-tools" layout="row" layout-align="space-between center">
            <span>Waivers</span>
-           <md-button ng-click="refresh('waiver')"><img src="assets/material-icons/core/refresh.svg"/></md-button>
+           <md-button ng-click="refresh('waiver')">
+             <md-icon md-svg-src="assets/material-icons/core/refresh.svg"class="s36" alt="Refresh"></md-icon>
+           </md-button>
          </h2>
       </md-toolbar>
-      <md-card ng-repeat="waiver in waivers.waivers | orderBy:'-date' | filter:search" ng-class="{'md-warning': waiver.viewed}">
+      <md-card ng-repeat="waiver in waivers.waivers | orderBy:'-date' | filter:search" ng-class="{'viewed': waiver.viewed}">
         <md-card-content>
           <h4>{{waiver.firstName}} {{waiver.lastName}}</h4>
-          <div>
+          <div layout="row" layout-align="end center" layout-margin layout-padding>
             <md-button class="md-primary md-raised" ng-click="view(waiver, 'waiver')">
               View
             </md-button>
@@ -36,17 +38,19 @@
       </md-card>      
     </md-content>
     
-    <md-content flex layout="column" class="md-whiteframe-z2" style="margin: 0 2px;">
+    <md-content flex layout="column" class="md-whiteframe-z1" >
       <md-toolbar>
          <h2 class="md-toolbar-tools" layout="row" layout-align="space-between center">
            <span>Media Consents</span>
-           <md-button ng-click="refresh('mediaConsent')"><img src="assets/material-icons/core/refresh.svg"/></md-button>
+           <md-button ng-click="refresh('mediaConsent')">
+             <md-icon md-svg-src="assets/material-icons/core/refresh.svg"class="s36" alt="Refresh"></md-icon>
+           </md-button>
          </h2>
       </md-toolbar>
-      <md-card ng-repeat="waiver in waivers.mediaConsents | orderBy:'-date' | filter:search"  ng-class="{'md-warning': waiver.viewed}">
+      <md-card ng-repeat="waiver in waivers.mediaConsents | orderBy:'-date' | filter:search"  ng-class="{'viewed': waiver.viewed}">
         <md-card-content>
           <h4>{{waiver.firstName}} {{waiver.lastName}}</h4>
-          <div>
+          <div layout="row" layout-align="end center" layout-margin layout-padding> 
             <md-button class="md-primary md-raised" ng-click="view(waiver, 'mediaConsent')">
               View
             </md-button>
@@ -61,17 +65,19 @@
       </md-card>       
     </md-content>
     
-    <md-content layout="column" class="md-whiteframe-z2" style="margin: 0 2px;">
+    <md-content flex layout="column" class="md-whiteframe-z1">
       <md-toolbar>
          <h2 class="md-toolbar-tools" layout="row" layout-align="space-between center">
            <span>Media Releases</span>
-           <md-button ng-click="refresh('mediaRelease')"><img src="assets/material-icons/core/refresh.svg"/></md-button>
+           <md-button ng-click="refresh('mediaRelease')">
+             <md-icon md-svg-src="assets/material-icons/core/refresh.svg"class="s36" alt="Refresh"></md-icon>
+           </md-button>
          </h2>
       </md-toolbar>
-      <md-card ng-repeat="waiver in waivers.mediaReleases | orderBy:'-date' | filter:search" ng-class="{'md-warning': waiver.viewed}">
+      <md-card ng-repeat="waiver in waivers.mediaReleases | orderBy:'-date' | filter:search" ng-class="{'viewed': waiver.viewed}">
         <md-card-content>
           <h4>{{waiver.firstName}} {{waiver.lastName}}</h4>
-          <div>
+          <div layout="row" layout-align="end center" layout-margin layout-padding>
             <md-button class="md-primary md-raised" ng-click="view(waiver, 'mediaRelease')">
               View
             </md-button>
