@@ -10,5 +10,11 @@
 #start {
   background-color: rgb(162, 203, 50);
   position: relative;
-  top: -80px;
+  top: -25px;
+}
+
+@meda (min-width: 699px) {
+  #start {
+    top: -25px;
+  }
 }
