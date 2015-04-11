@@ -11,10 +11,9 @@ angular.module('rrDisclaimerApp')
       $scope.user = {};
     };  
     
-    $scope.goToWaiver  = function() {
-      $location.hash('title');
-      $anchorScroll();
-      $location.path('/waiver');
+    $scope.goToMain  = function() {
+      Forms.currentUser = {};
+      $location.path('/');
     };  
   
     // Submit function that is passed to directive and returns boolean for disabling submit button

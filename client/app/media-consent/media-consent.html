@@ -35,6 +35,7 @@
       <div signature-pad signature="signature" clear="clear()" close="submit()" ng-hide="inputsDisabled"></div>
       <img ng-show="inputsDisabled" ng-src="{{user.signature}}" style="width: 100%;"/>
       <br>
+      <md-button ng-click="goToMediaRelease()" class="md-warning md-raised">Skip</md-button>
       <md-button ng-show="inputsDisabled" ng-click="goToMediaRelease()" class="md-primary md-raised">Media Consent is complete, fill in Media Release form?</md-button>
     </div>        
   </form>
